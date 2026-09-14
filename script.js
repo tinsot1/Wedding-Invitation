@@ -3,7 +3,8 @@ window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const guestName = urlParams.get('guest');
     if (guestName) {
-        document.getElementById('guest-name').innerText = "Dear " + decodeURIComponent(guestName) + ", You are invited!";
+        const decodedName = decodeURIComponent(guestName);
+        document.getElementById('guest-name').innerText = "Dear " + decodedName + " ❤️";
     }
     
     // Initialize background music
@@ -64,7 +65,12 @@ function revealInvitation() {
     }
 }
 
-// 5. Countdown Timer Functionality
+// 5. Open Gallery
+function openGallery() {
+    window.location.href = 'gallery.html';
+}
+
+// 6. Countdown Timer Functionality
 const targetDate = new Date("Apr 7, 2027 11:00:00").getTime();
 
 function updateCountdown() {
@@ -93,13 +99,15 @@ function updateCountdown() {
 updateCountdown(); // Call immediately
 setInterval(updateCountdown, 1000);
 
-// 6. Generate Personalised Link for a new guest
+// 7. Generate Personalised Link for a new guest
 function generateLink() {
     const name = document.getElementById('nameInput').value;
     if(name) {
         const encodedName = encodeURIComponent(name);
         const baseUrl = window.location.href.split('?')[0];
         const finalUrl = `${baseUrl}?guest=${encodedName}`;
-        document.getElementById('generatedUrl').innerHTML = `<a href="${finalUrl}" target="_blank">${finalUrl}</a>`;
+        document.getElementById('generatedUrl').innerHTML = `<strong>Share this link:</strong><br><a href="${finalUrl}" target="_blank">${finalUrl}</a>`;
+    } else {
+        alert('Please enter a guest name');
     }
 }

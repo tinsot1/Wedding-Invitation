@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Ajeesh & Sona</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero / Cover Section -->
+    <header class="hero-section">
+        <h1 id="guest-name">Welcome</h1>
+        <div class="couple-names">Ajeesh & Sona</div>
+        <p class="date">Sunday · 13 September 2026</p>
+        <button onclick="revealInvitation()">Tap to Open</button>
+    </header>
+
+    <!-- Main Content (Hidden until opened) -->
+    <main id="main-invitation" class="hidden">
+        
+        <!-- Countdown Timer -->
+        <section class="countdown-section">
+            <h2>The Day Draws Closer</h2>
+            <div id="timer">
+                <span id="days">00</span> Days 
+                <span id="hours">00</span> Hours 
+                <span id="minutes">00</span> Mins
+            </div>
+        </section>
+
+        <!-- Event Details -->
+        <section class="event-details">
+            <h2>Wedding Ceremony</h2>
+            <p><strong>Time:</strong> Muhurtham 10:00 AM to 10:30 AM</p>
+            <p><strong>Venue:</strong> Royal Regency Convention Centre, Oachira, Kerala</p>
+            <a href="https://google.com" target="_blank" class="btn">Open in Google Maps</a>
+        </section>
+
+        <!-- Personalised Link Generator for WhatsApp -->
+        <section class="generator-section">
+            <h2>Create a Guest Link</h2>
+            <input type="text" id="nameInput" placeholder="Enter Guest Name">
+            <button onclick="generateLink()">Generate Link</button>
+            <p id="generatedUrl"></p>
+        </section>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

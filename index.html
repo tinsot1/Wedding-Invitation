@@ -8,6 +8,11 @@
 </head>
 <body>
 
+    <!-- Background Music Player -->
+    <div class="music-player">
+        <button id="musicToggle" onclick="toggleMusic()" title="Toggle Music">🎵</button>
+    </div>
+
     <!-- Hero / Cover Section -->
     <header class="hero-section">
         <h1 id="guest-name">Welcome</h1>
@@ -23,9 +28,22 @@
         <section class="countdown-section">
             <h2>The Day Draws Closer</h2>
             <div id="timer">
-                <span id="days">00</span> Days 
-                <span id="hours">00</span> Hours 
-                <span id="minutes">00</span> Mins
+                <div class="timer-item">
+                    <span id="days" class="timer-value">00</span>
+                    <p>Days</p>
+                </div>
+                <div class="timer-item">
+                    <span id="hours" class="timer-value">00</span>
+                    <p>Hours</p>
+                </div>
+                <div class="timer-item">
+                    <span id="minutes" class="timer-value">00</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="timer-item">
+                    <span id="seconds" class="timer-value">00</span>
+                    <p>Seconds</p>
+                </div>
             </div>
         </section>
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Binso & Akhila</title>
+    <link rel="stylesheet" href="gallery-style.css">
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">← Back</a>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button id="musicToggle" onclick="toggleMusic()" title="Toggle Music">🎵</button>
+    </div>
+
+    <!-- Gallery Header -->
+    <div class="gallery-header">
+        <h1>Our Love Story</h1>
+        <p>A collection of beautiful moments</p>
+    </div>
+
+    <!-- Photo Gallery Grid -->
+    <div class="gallery-container">
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.20%20PM.jpeg" alt="Wedding moment 1">
+            <div class="photo-overlay">
+                <p>Our beautiful journey</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.20%20PM%20(1).jpeg" alt="Wedding moment 2">
+            <div class="photo-overlay">
+                <p>Precious memories</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.20%20PM%20(2).jpeg" alt="Wedding moment 3">
+            <div class="photo-overlay">
+                <p>Love in every frame</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.21%20PM.jpeg" alt="Wedding moment 4">
+            <div class="photo-overlay">
+                <p>Forever moments</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.21%20PM%20(1).jpeg" alt="Wedding moment 5">
+            <div class="photo-overlay">
+                <p>Timeless love</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.21%20PM%20(2).jpeg" alt="Wedding moment 6">
+            <div class="photo-overlay">
+                <p>Our story unfolds</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.22%20PM.jpeg" alt="Wedding moment 7">
+            <div class="photo-overlay">
+                <p>Together forever</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.22%20PM%20(1).jpeg" alt="Wedding moment 8">
+            <div class="photo-overlay">
+                <p>Pure happiness</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.23%20PM%20(1).jpeg" alt="Wedding moment 9">
+            <div class="photo-overlay">
+                <p>Blessed moments</p>
+            </div>
+        </div>
+        <div class="photo-item">
+            <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.23%20PM.jpeg" alt="Wedding moment 10">
+            <div class="photo-overlay">
+                <p>Love's celebration</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-nav">
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="gallery-script.js"></script>
+</body>
+</html>

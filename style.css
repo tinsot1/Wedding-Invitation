@@ -172,6 +172,12 @@ section {
     border-radius: 15px;
 }
 
+/* Make medium-1 and medium-2 bigger portrait */
+.medium-1, .medium-2 {
+    grid-column: span 6;
+    height: 420px;
+}
+
 /* Small images - spanning 4 columns */
 .small-1, .small-2, .small-3 {
     grid-column: span 4;
@@ -323,6 +329,11 @@ input[type="text"] {
         grid-column: span 3;
         height: 220px;
     }
+
+    .medium-1, .medium-2 {
+        grid-column: span 6;
+        height: 360px;
+    }
     
     .small-1, .small-2, .small-3 {
         grid-column: span 3;
@@ -344,6 +355,11 @@ input[type="text"] {
     .medium-1, .medium-2, .medium-3 {
         grid-column: span 1;
         height: 200px;
+    }
+
+    .medium-1, .medium-2 {
+        grid-column: span 1;
+        height: 350px;
     }
     
     .small-1, .small-2, .small-3 {

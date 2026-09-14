@@ -1,1 +1,48 @@
+/* Reset and Font Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #fcf9f5;
+    color: #333;
+    text-align: center;
+}
+
+/* Cover Screen styling */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('your-cover-image.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+/* Hide main section initially */
+.hidden {
+    display: none;
+}
+
+/* Form and Buttons styling */
+button, .btn {
+    padding: 12px 24px;
+    background-color: #bfa15f; /* Elegant Gold */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+section {
+    padding: 60px 20px;
+    border-bottom: 1px solid #eee;
+}
 

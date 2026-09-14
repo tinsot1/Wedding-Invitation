@@ -16,6 +16,9 @@
     <!-- Hero / Cover Section -->
     <header class="hero-section">
         <h1 id="guest-name">Welcome</h1>
+        <div class="invitation-message" id="invitation-message">
+            <p>We would be delighted to celebrate our wedding with you</p>
+        </div>
         <div class="couple-names">Binso & Akhila</div>
         <p class="date">Wednesday · 07 April 2027</p>
         <button onclick="revealInvitation()">Tap to Open</button>
@@ -58,10 +61,11 @@
         <!-- Photo Gallery - Elegant Scattered Layout -->
         <section class="gallery-section">
             <h2>Our Love Story</h2>
-             
+            
             <div class="elegant-gallery">
-                <div class="gallery-item large-1">
+                <div class="gallery-item large-1" onclick="openGallery()">
                     <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.20%20PM.jpeg" alt="Wedding moment">
+                    <div class="gallery-click-hint">View All Photos</div>
                 </div>
                 <div class="gallery-item small-1">
                     <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.20%20PM%20(1).jpeg" alt="Wedding moment">
@@ -75,8 +79,9 @@
             </div>
 
             <div class="elegant-gallery">
-                <div class="gallery-item medium-1">
+                <div class="gallery-item medium-1" onclick="openGallery()">
                     <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.20%20PM%20(2).jpeg" alt="Wedding moment">
+                    <div class="gallery-click-hint">View All Photos</div>
                 </div>
                 <div class="gallery-item large-2">
                     <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.21%20PM.jpeg" alt="Wedding moment">
@@ -93,8 +98,9 @@
             </div>
 
             <div class="elegant-gallery">
-                <div class="gallery-item medium-2">
+                <div class="gallery-item medium-2" onclick="openGallery()">
                     <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.21%20PM%20(2).jpeg" alt="Wedding moment">
+                    <div class="gallery-click-hint">View All Photos</div>
                 </div>
                 <div class="gallery-item large-3">
                     <img src="WhatsApp%20Image%202026-09-13%20at%2010.57.22%20PM.jpeg" alt="Wedding moment">
@@ -123,6 +129,11 @@
             <div class="bible-verse-section">
                 <p class="bible-verse">"And now these three remain: faith, hope and love. But the greatest of these is love."</p>
                 <p class="bible-reference">1 Corinthians 13:13</p>
+            </div>
+
+            <!-- View All Photos Button -->
+            <div class="view-all-photos">
+                <button class="btn-large" onclick="openGallery()">📸 View All Photos</button>
             </div>
         </section>
 

@@ -116,30 +116,133 @@ section {
     font-weight: normal;
 }
 
-/* Gallery styling */
+/* Gallery Section */
 .gallery-section {
-    background-color: #fff9f5;
-    padding: 40px 20px;
+    background-color: #fef6f0;
+    padding: 80px 20px;
 }
 
-.gallery {
+.gallery-section h2 {
+    margin-bottom: 60px;
+}
+
+/* Elegant Scattered Gallery */
+.elegant-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 30px 0;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
 }
 
-.gallery img {
+.gallery-item {
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    display: block;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+/* Large images - spanning 6 columns */
+.large-1, .large-2, .large-3, .large-4 {
+    grid-column: span 6;
+    height: 350px;
+    border-radius: 20px;
+}
+
+/* Medium images - spanning 4 columns */
+.medium-1, .medium-2, .medium-3 {
+    grid-column: span 4;
+    height: 280px;
+    border-radius: 15px;
+}
+
+/* Small images - spanning 4 columns */
+.small-1, .small-2, .small-3 {
+    grid-column: span 4;
+    height: 220px;
+    border-radius: 12px;
+}
+
+/* Different shapes and styles */
+.large-1 {
+    border-radius: 25px;
+}
+
+.large-2 {
+    border-radius: 15px;
+    grid-column: span 6;
+}
+
+.large-3 {
+    border-radius: 30px;
+}
+
+.large-4 {
+    border-radius: 20px;
+}
+
+.medium-1 {
+    border-radius: 18px;
+}
+
+.medium-2 {
+    border-radius: 12px;
+}
+
+.medium-3 {
+    border-radius: 22px;
+}
+
+.small-1 {
+    border-radius: 10px;
+}
+
+.small-2 {
+    border-radius: 15px;
+}
+
+.small-3 {
+    border-radius: 8px;
+}
+
+/* Bible Verse Sections */
+.bible-verse-section {
+    background: linear-gradient(135deg, #fff0e6 0%, #ffe8d6 100%);
+    padding: 60px 40px;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    border-left: 5px solid #bfa15f;
+}
+
+.bible-verse {
+    font-size: 1.3em;
+    font-style: italic;
+    color: #5a4a3a;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.bible-reference {
+    font-size: 1em;
+    color: #bfa15f;
+    font-weight: bold;
 }
 
 h2 {
@@ -195,13 +298,57 @@ input[type="text"] {
     background: linear-gradient(135deg, #fff9f5 0%, #ffe8d6 100%);
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+.generator-section {
+    background: linear-gradient(135deg, #fff9f5 0%, #ffe8d6 100%);
+}
+
+.generator-section p:first-of-type {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+    .elegant-gallery {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px;
     }
     
-    .gallery img {
+    .large-1, .large-2, .large-3, .large-4 {
+        grid-column: span 6;
+        height: 280px;
+    }
+    
+    .medium-1, .medium-2, .medium-3 {
+        grid-column: span 3;
+        height: 220px;
+    }
+    
+    .small-1, .small-2, .small-3 {
+        grid-column: span 3;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .elegant-gallery {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .large-1, .large-2, .large-3, .large-4 {
+        grid-column: span 1;
+        height: 250px;
+    }
+    
+    .medium-1, .medium-2, .medium-3 {
+        grid-column: span 1;
         height: 200px;
+    }
+    
+    .small-1, .small-2, .small-3 {
+        grid-column: span 1;
+        height: 180px;
     }
     
     .couple-names {
@@ -229,5 +376,14 @@ input[type="text"] {
         width: 45px;
         height: 45px;
         font-size: 1.2em;
+    }
+    
+    .bible-verse-section {
+        padding: 40px 20px;
+        margin: 30px 10px;
+    }
+    
+    .bible-verse {
+        font-size: 1.1em;
     }
 }

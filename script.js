@@ -6,33 +6,65 @@ window.onload = function() {
         document.getElementById('guest-name').innerText = "Dear " + decodeURIComponent(guestName) + ", You are invited!";
     }
     
-    // Initialize music
-    playBackgroundMusic();
+    // Initialize background music
+    initializeMusic();
 };
 
-// 2. Background Music Function
-function playBackgroundMusic() {
-    const audio = new Audio('wedding-music.mp3');
-    audio.loop = true;
-    audio.volume = 0.3; // 30% volume
+// 2. Initialize Background Music
+let audioElement = null;
+
+function initializeMusic() {
+    // Create audio element
+    audioElement = new Audio('wedding-music.mp3');
+    audioElement.loop = true;
+    audioElement.volume = 0.3; // 30% volume
     
-    // Try to play, user interaction may be required
-    audio.play().catch(function(error) {
-        // User hasn't interacted with page yet, will play on first interaction
-        document.addEventListener('click', function playOnClick() {
-            audio.play();
-            document.removeEventListener('click', playOnClick);
+    // Try to autoplay
+    const playPromise = audioElement.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            // Autoplay was prevented, will play on user interaction
+            document.addEventListener('click', playAudioOnce);
+            document.addEventListener('touchstart', playAudioOnce);
         });
-    });
+    }
 }
 
-// 3. Reveal Invitation Button
+function playAudioOnce() {
+    if (audioElement && audioElement.paused) {
+        audioElement.play().catch(e => console.log('Audio play failed:', e));
+    }
+    // Remove listeners after first interaction
+    document.removeEventListener('click', playAudioOnce);
+    document.removeEventListener('touchstart', playAudioOnce);
+}
+
+// 3. Toggle Music Function
+function toggleMusic() {
+    if (audioElement) {
+        if (audioElement.paused) {
+            audioElement.play();
+            document.getElementById('musicToggle').classList.add('playing');
+        } else {
+            audioElement.pause();
+            document.getElementById('musicToggle').classList.remove('playing');
+        }
+    }
+}
+
+// 4. Reveal Invitation Button
 function revealInvitation() {
     document.getElementById('main-invitation').classList.remove('hidden');
     document.getElementById('main-invitation').scrollIntoView({ behavior: 'smooth' });
+    
+    // Play music when invitation is revealed
+    if (audioElement && audioElement.paused) {
+        audioElement.play().catch(e => console.log('Audio play failed:', e));
+    }
 }
 
-// 4. Countdown Timer Functionality
+// 5. Countdown Timer Functionality
 const targetDate = new Date("Apr 7, 2027 11:00:00").getTime();
 
 function updateCountdown() {
@@ -45,10 +77,10 @@ function updateCountdown() {
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     if (difference > 0) {
-        document.getElementById("days").innerText = days;
-        document.getElementById("hours").innerText = hours;
-        document.getElementById("minutes").innerText = minutes;
-        document.getElementById("seconds").innerText = seconds;
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
     } else {
         document.getElementById("days").innerText = "0";
         document.getElementById("hours").innerText = "0";
@@ -61,7 +93,7 @@ function updateCountdown() {
 updateCountdown(); // Call immediately
 setInterval(updateCountdown, 1000);
 
-// 5. Generate Personalised Link for a new guest
+// 6. Generate Personalised Link for a new guest
 function generateLink() {
     const name = document.getElementById('nameInput').value;
     if(name) {
